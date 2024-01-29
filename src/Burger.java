@@ -1,6 +1,6 @@
 public class Burger {
 
-        public String base;
+        public String bun;
         public String meat;
 
         public boolean doubleMeat;
@@ -8,38 +8,45 @@ public class Burger {
 
         public String green;
 
-        public String mayo;
+        public boolean mayo;
 
 
-        public Burger() {
-            base = "Пшенична";
-            meat = "Свинина";
-            cheese = "Чеддар";
-            green = "Зелень";
-            mayo = "Майонез";
-            System.out.println("Склад бургеру \"Звичайний\": Булочка " + base + ", " + meat + ", сир " + cheese + ", " + green + ", " + mayo+ ". ");
-        }
-
-
-        public Burger(String base, String meat, String cheese, String green) {
-            this.base = base;
+        public Burger(String bun, String meat, String cheese, String green, boolean mayo) {
+            this.bun = bun;
             this.meat = meat;
             this.cheese = cheese;
             this.green = green;
-            System.out.println("Склад бургеру \"Дієтичний\": Булочка " + base + ", " + meat + ", сир " + cheese + ", " + green + ". ");
+            this.mayo =mayo;
+            if (!mayo) {
+                System.out.println("Склад бургеру \"Дієтичний\": Булочка " + bun + ", " + meat + ", сир " + cheese + ", " + green + ". ");
+            }
+            else{
+                System.out.println("Склад бургеру \"Звичайний\": Булочка " + bun + ", " + meat + ", сир " + cheese + ", " + green + ", Майонез" + ". ");
+            }
         }
 
-        public Burger(boolean doubleMeat) {
-            base = "Пшенична";
-            meat = "Свинина";
-            cheese = "Чеддар";
-            green = "Зелень";
-            mayo = "Майонез";
+
+        public Burger(String bun, String meat, String cheese, String green) {
+            this.bun = bun;
+            this.meat = meat;
+            this.cheese = cheese;
+            this.green = green;
+            System.out.println("Склад бургеру \"Дієтичний\": Булочка " + bun + ", " + meat + ", сир " + cheese + ", " + green + ". ");
+        }
+
+        public Burger(String bun, String meat, boolean doubleMeat, String cheese, String green, boolean mayo) {
+            this.bun = bun;
+            this.meat = meat;
+            this.doubleMeat=doubleMeat;
+            this.cheese = cheese;
+            this.green = green;
+            this.mayo =mayo;
+
             if(!doubleMeat){
-                System.out.println("Склад бургеру \"Звичайний\": Булочка " + base + ", " + meat + ", cир " + cheese + ", " + green + ". ");
+                System.out.println("Склад бургеру \"Звичайний\": Булочка " + bun + ", " + meat + ", cир " + cheese + ", " + green + ", Майонез. ");
             }
             else {
-                System.out.println("Склад бургеру \"Double звичайний\": Булочка " + base + ", " + meat + "X2, сир " + cheese + ", " + green + ", " + mayo + ". ");
+                System.out.println("Склад бургеру \"Double звичайний\": Булочка " + bun + ", " + meat + "X2, сир " + cheese + ", " + green + ", Майонез.");
             }
         }
 
